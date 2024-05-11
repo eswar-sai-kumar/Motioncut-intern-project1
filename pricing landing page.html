@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Product/Service</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="pricing">
+            <h2>Pricing Options</h2>
+            <div class="price-card">
+                <h3>Basic</h3>
+                <p class="price">$X/month</p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+                <button data-price="X">Select</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>SmartPricer Technologies</p>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const buttons = document.querySelectorAll('.price-card button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const price = this.getAttribute('data-price');
+                    alert(`You selected the ${price} plan.`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
